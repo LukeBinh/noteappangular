@@ -1,0 +1,20 @@
+span{
+  color: red;
+  font-size: 14px;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.display i {
+  font-size: 22px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.display i:active{
+  background-color: red;
+}

@@ -1,0 +1,25 @@
+.note-box.grid{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.note-header.grid{
+  width: 30%;
+}
+
+.note-body.grid{
+  flex: 1;
+  display: flex;
+  /* justify-content: center; */
+}
+.note-input.grid{
+  width: 70%;
+}
+
+.note-footer.grid{
+  width: 30%;
+}

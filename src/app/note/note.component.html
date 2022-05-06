@@ -1,0 +1,23 @@
+  <div class="note-box" [class.grid]="isDisplayGrid" *ngFor="let note of notes; index as idx" [style]="{'background-color': note.bgColor}">
+    <div class="note-header" [class.grid]="isDisplayGrid">
+      <h1 class="title">{{note.title}}</h1>
+      <div class="work-tag" [style]="{'background-color': note.tagColor}">
+        {{note.tag}}
+      </div>
+    </div>
+    <div class="note-body" [class.grid]="isDisplayGrid">
+      <textarea type="text" [rows]="isDisplayGrid ? '2' : '10'" #contentInput class="note-input" [disabled]="note.disable">{{note.content}}</textarea>
+    </div>
+
+    <div class="note-footer" [class.grid]="isDisplayGrid">
+      <div class="time">
+        <span class="hour">{{note.hour}}:{{note.minute}}</span>
+        <span class="dmy">{{note.dmy}}</span>
+      </div>
+      <div class="action">
+        <i class="fa-solid fa-check" (click)="saveNote(contentInput.value ,idx)" *ngIf="!note.disable"></i>
+        <i class="fa-solid fa-pen-to-square" (click)="editNote(idx)"></i>
+        <i class="fa-solid fa-xmark" (click)="removeNote(idx)"></i>
+      </div>
+    </div>
+  </div>
