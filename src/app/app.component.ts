@@ -9,7 +9,7 @@ import { NoteService } from './note.service';
 export class AppComponent {
   title:string = '';
   id:number = 0 ;
-  isDisplayGrid:boolean = false;
+  isDisplayGrid:boolean = JSON.parse(localStorage.getItem('displayGrid') || 'false')
 
   constructor(private noteService : NoteService){}
 
@@ -45,5 +45,15 @@ export class AppComponent {
       tagColor,
     })
       this.title = '';
+  }
+
+  isGrid(){
+    this.isDisplayGrid = true;
+    localStorage.setItem('displayGrid',JSON.stringify(this.isDisplayGrid));
+  }
+
+  isTable(){
+    this.isDisplayGrid = false;
+    localStorage.setItem('displayGrid',JSON.stringify(this.isDisplayGrid));
   }
 }

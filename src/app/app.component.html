@@ -11,8 +11,8 @@
       <span *ngIf="title.trim() === ''">Please type your topic</span>
     </div>
     <div class="display">
-      <i class="fa-solid fa-list" (click)="isDisplayGrid = true"></i>
-      <i class="fa-solid fa-table" (click)="isDisplayGrid = false"></i>
+      <i class="fa-solid fa-list" (click)="isGrid()"></i>
+      <i class="fa-solid fa-table" (click)="isTable()"></i>
     </div>
   </header>
   <app-note id="note" [isDisplayGrid]="isDisplayGrid"></app-note>
